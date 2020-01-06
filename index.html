@@ -1,5 +1,7 @@
 <html>
     <head>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
@@ -8,6 +10,25 @@
             <form id="add-cafe-form"></form>
             <ul id="cafe-list"></ul>
         </div>
+
+
+            <!-- TODO: Add SDKs for Firebase products that you want to use
+                https://firebase.google.com/docs/web/setup#available-libraries -->
+
+            <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyBOApxV-6rxMsOX-D2tawkndEIl5HdAfrU",
+                authDomain: "tutorial1-eac71.firebaseapp.com",
+                databaseURL: "https://tutorial1-eac71.firebaseio.com",
+                projectId: "tutorial1-eac71",
+                storageBucket: "tutorial1-eac71.appspot.com",
+                messagingSenderId: "521055766239",
+                appId: "1:521055766239:web:f9b378fa9e082b2c8b8b6a"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            </script>
         <script src="app.js"></script>
     </body>
 </html>
