@@ -18,6 +18,12 @@ function renderBook(doc){
     li.appendChild(x)
 
     bookList.appendChild(li)
+
+    //deleting data
+    x.addEventListener('click', e => {
+        let id = e.target.parentElement.getAttribute('data-id')
+        
+    })
 }
 
 //getting data
