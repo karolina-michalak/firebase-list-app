@@ -49,5 +49,7 @@ form.addEventListener('submit', e => {
 //real-time listener
 db.collection('books').orderBy('author').onSnapshot(snapshot => {
     let changes = snapshot.docChanges()
-    console.log(changes)
+    changes.forEach(change => {
+        console.log(change.doc.data())
+    })
 })
