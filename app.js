@@ -27,7 +27,7 @@ function renderBook(doc){
 }
 
 //getting data
-db.collection('books').get()
+db.collection('books').where('author', '==', 'Dmitry Glukhovsky').get()
     .then((snapshot) => {
         snapshot.docs.forEach(doc => {
             renderBook(doc)
