@@ -27,7 +27,7 @@ function renderBook(doc){
 }
 
 //getting data
-db.collection('books').orderBy('title').get()
+db.collection('books').orderBy('author').get()
     .then((snapshot) => {
         snapshot.docs.forEach(doc => {
             renderBook(doc)
