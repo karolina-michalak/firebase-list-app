@@ -22,7 +22,7 @@ function renderBook(doc){
     //deleting data
     x.addEventListener('click', e => {
         let id = e.target.parentElement.getAttribute('data-id')
-        
+        db.collection('books').doc(id).delete()
     })
 }
 
