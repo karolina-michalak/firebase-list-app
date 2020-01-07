@@ -27,12 +27,12 @@ function renderBook(doc){
 }
 
 //getting data
-db.collection('books').orderBy('author').get()
-    .then((snapshot) => {
-        snapshot.docs.forEach(doc => {
-            renderBook(doc)
-        })
-    })
+// db.collection('books').where('author', '==', 'Dmitry Glukhovsky').orderBy('title').get()
+//     .then((snapshot) => {
+//         snapshot.docs.forEach(doc => {
+//             renderBook(doc)
+//         })
+//     })
 
 
 //saving data
@@ -44,4 +44,10 @@ form.addEventListener('submit', e => {
     })
     form.title.value = ''
     form.author.value = ''
+})
+
+//real-time listener
+db.collection('books').orderBy('author').onSnapshot(snapshot => {
+    let changes = snapshot.docChanges()
+    console.log(changes)
 })
