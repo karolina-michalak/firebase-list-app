@@ -33,4 +33,6 @@ form.addEventListener('submit', e => {
         title: form.title.value, 
         author: form.author.value
     })
+    form.title.value = ''
+    form.author.value = ''
 })
