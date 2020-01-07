@@ -50,6 +50,11 @@ form.addEventListener('submit', e => {
 db.collection('books').orderBy('author').onSnapshot(snapshot => {
     let changes = snapshot.docChanges()
     changes.forEach(change => {
-        console.log(change.doc.data())
+        if(change.type == 'added'){
+            renderBook(change.doc)
+        } else if(change.type == 'removed'){
+            let li = bookList.querySelector('[data-id=' + change.doc.id + ']')
+            bookList.removeChild(li)
+        }
     })
 })
