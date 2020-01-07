@@ -1,4 +1,5 @@
 const bookList = document.querySelector('#book-list')
+const form = document.querySelector('#add-book-form')
 
 //create element and render book
 function renderBook(doc){
@@ -16,9 +17,20 @@ function renderBook(doc){
     bookList.appendChild(li)
 }
 
+//getting data
 db.collection('books').get()
     .then((snapshot) => {
         snapshot.docs.forEach(doc => {
             renderBook(doc)
         })
     })
+
+
+//saving data
+form.addEventListener('submit', e => {
+    e.preventDefault()
+    db.collection('books').add({
+        title: form.title.value, 
+        author: form.author.value
+    })
+})
